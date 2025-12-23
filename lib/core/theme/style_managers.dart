@@ -116,10 +116,10 @@ class StyleManagers {
   );
 
 
-  static TextStyle font16White400 = TextStyle(
+  static TextStyle font16White500 = TextStyle(
     fontSize: 16,
     color: Colors.white,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
   );
 
 
