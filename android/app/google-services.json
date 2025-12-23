@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "426389100522",
+    "project_id": "chatappnti",
+    "storage_bucket": "chatappnti.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426389100522:android:819e1e8d0ccbbfba654493",
+        "android_client_info": {
+          "package_name": "com.example.nti_final_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbaqYspAzYdMWwcW0ldPSorGhpaTVF-YY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
