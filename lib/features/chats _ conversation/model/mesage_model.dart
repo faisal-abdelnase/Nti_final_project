@@ -15,4 +15,7 @@ List<MessageModel> messages = [
   MessageModel(message: "Great! 😊", id: "me"),
   MessageModel(message: "Awesome, thanks for letting me know! Can't wait for my delivery. 🎉", id: "me"),
   MessageModel(message: "Awesome, thanks for letting me know! Can't wait for my delivery. 🎉", id: "me"),
+  MessageModel(message: "Awesome, thanks for letting me know! Can't wait for my delivery. 🎉", id: "me"),
+  MessageModel(message: "Awesome, thanks for letting me know! Can't wait for my delivery. 🎉", id: "me"),
+  MessageModel(message: "Awesome, thanks for letting me know! Can't wait for my delivery. 🎉", id: "me"),
 ];
