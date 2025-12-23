@@ -39,6 +39,13 @@ class StyleManagers {
     fontWeight: FontWeight.w500,
   );
 
+
+  static TextStyle font16Grey500 = TextStyle(
+    fontSize: 16,
+    color: Colors.grey,
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle font16SecdColor500 = TextStyle(
     fontSize: 16,
     color: ColorManagers.secondryColor,

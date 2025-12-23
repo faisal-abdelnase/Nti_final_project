@@ -3,6 +3,7 @@ import 'package:nti_final_project/features/chats%20_%20conversation/model/mesage
 import 'package:nti_final_project/features/chats%20_%20conversation/widgets/chat_buble.dart';
 import 'package:nti_final_project/features/chats%20_%20conversation/widgets/chat_buble_friend.dart';
 import 'package:nti_final_project/features/chats%20_%20conversation/widgets/chats_conversation_app_bar.dart';
+import 'package:nti_final_project/features/chats%20_%20conversation/widgets/send_message_container.dart';
 
 class ChatsConversationScreen extends StatelessWidget {
   const ChatsConversationScreen({super.key});
@@ -31,9 +32,14 @@ class ChatsConversationScreen extends StatelessWidget {
                 }),
             ),
           ),
+
+
+          SendMessageContainer()
         ],
       ),
     );
   }
 }
+
+
 
