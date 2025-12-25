@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nti_final_project/core/routing/routes.dart';
 import 'package:nti_final_project/features/chats%20_%20conversation/chats_conversation_screen.dart';
 import 'package:nti_final_project/features/chats/chats_screen.dart';
+import 'package:nti_final_project/features/main_layout.dart';
 import 'package:nti_final_project/features/profile/profile_screen.dart';
 
 class AppRouter {
@@ -14,7 +15,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ChatsScreen());
       case Routes.profile:
         return MaterialPageRoute(builder: (_) => ProfileScreen());
-
+      case Routes.mainLayout:
+        return MaterialPageRoute(builder: (_) => MainLayout());
       default:
         return null;
     }

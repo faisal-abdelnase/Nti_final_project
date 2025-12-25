@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nti_final_project/core/theme/color_managers.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nti_final_project/core/widgets/custom_bottom_navbar.dart';
-import 'package:nti_final_project/core/widgets/custom_top_appbar.dart';
 import 'package:nti_final_project/features/profile/widgets/edit_button.dart';
 import 'package:nti_final_project/features/profile/widgets/logout_button.dart';
 import 'package:nti_final_project/features/profile/widgets/user_data_row.dart';
@@ -13,8 +11,6 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomTopAppBar(),
-      bottomNavigationBar: CustomBottomNavBar(),
       body: SizedBox(
         width: double.infinity,
         child: Padding(
