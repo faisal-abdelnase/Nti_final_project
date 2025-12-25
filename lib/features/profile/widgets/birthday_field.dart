@@ -60,7 +60,6 @@ class _BirthdayFieldState extends State<BirthdayField> {
                 );
               },
             );
-
             if (pickedDate != null) {
               setState(() {
                 selectedDate = pickedDate;

@@ -19,6 +19,7 @@ class NameField extends StatelessWidget {
             color: ColorManagers.chatsTimeColor,
           ),
         ),
+
         SizedBox(height: 8.h),
         SizedBox(
           width: 345.w,

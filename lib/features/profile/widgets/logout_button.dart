@@ -19,6 +19,7 @@ class LogoutButton extends StatelessWidget {
           ),
           elevation: 0,
         ),
+
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

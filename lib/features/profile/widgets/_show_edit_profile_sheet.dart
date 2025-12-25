@@ -57,6 +57,7 @@ void showEditProfileSheet(BuildContext context) {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+
                   SizedBox(height: 16.h),
                   NameField(nameController: nameController),
                   SizedBox(height: 16.h),

@@ -20,6 +20,7 @@ class UserDataRow extends StatelessWidget {
             color: ColorManagers.chatsSubTextColor,
           ),
         ),
+
         Expanded(
           child: Text(
             data,

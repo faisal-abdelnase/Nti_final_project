@@ -24,6 +24,7 @@ class EmailField extends StatelessWidget {
             color: ColorManagers.chatsTimeColor,
           ),
         ),
+
         SizedBox(height: 8.h),
         TextFormField(
           controller: emailController,

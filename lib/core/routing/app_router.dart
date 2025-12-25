@@ -12,7 +12,6 @@ class AppRouter {
 
       case Routes.chats:
         return MaterialPageRoute(builder: (_) => ChatsScreen());
-
       case Routes.profile:
         return MaterialPageRoute(builder: (_) => ProfileScreen());
 

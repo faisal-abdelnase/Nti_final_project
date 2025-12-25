@@ -34,6 +34,7 @@ class _GenderSelectionFieldState extends State<GenderSelectionField> {
             border: Border.all(color: const Color(0xFFD0D1DB)),
             borderRadius: BorderRadius.circular(8.r),
           ),
+
           child: DropdownButtonHideUnderline(
             child: DropdownButton<String>(
               value: selectedGender,

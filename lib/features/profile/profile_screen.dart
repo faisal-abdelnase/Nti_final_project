@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nti_final_project/core/theme/color_managers.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nti_final_project/features/profile/widgets/custom_bottom_navbar.dart';
-import 'package:nti_final_project/features/profile/widgets/custom_top_appbar.dart';
+import 'package:nti_final_project/core/widgets/custom_bottom_navbar.dart';
+import 'package:nti_final_project/core/widgets/custom_top_appbar.dart';
 import 'package:nti_final_project/features/profile/widgets/edit_button.dart';
 import 'package:nti_final_project/features/profile/widgets/logout_button.dart';
 import 'package:nti_final_project/features/profile/widgets/user_data_row.dart';
@@ -62,6 +62,7 @@ class ProfileScreen extends StatelessWidget {
                   color: ColorManagers.chatsMainTextColor,
                 ),
               ),
+
               SizedBox(height: 32.h),
               UserDataRow(title: "Phone", data: "(+44) 20 1234 5689"),
               SizedBox(height: 16.h),

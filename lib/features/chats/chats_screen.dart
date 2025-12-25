@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nti_final_project/features/profile/widgets/custom_top_appbar.dart';
-import 'package:nti_final_project/features/profile/widgets/custom_bottom_navbar.dart';
+import 'package:nti_final_project/core/widgets/custom_top_appbar.dart';
+import 'package:nti_final_project/core/widgets/custom_bottom_navbar.dart';
 
 class ChatsScreen extends StatelessWidget {
   const ChatsScreen({super.key});
