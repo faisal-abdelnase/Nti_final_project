@@ -3,4 +3,5 @@ class Routes {
 
   static const String chats = '/chats';
   static const String profile = '/profile';
+  static const String mainLayout = '/mainLayout';
 }

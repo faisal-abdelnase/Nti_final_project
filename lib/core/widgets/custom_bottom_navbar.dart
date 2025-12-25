@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomBottomNavBar extends StatefulWidget {
-  const CustomBottomNavBar({super.key});
+class CustomBottomNavBar extends StatelessWidget {
+  final int currentIndex;
+  final Function(int) onTap;
 
-  @override
-  State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
-}
+  const CustomBottomNavBar({
+    super.key,
+    required this.currentIndex,
+    required this.onTap,
+  });
 
-class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
-  int _currentIndex = 2;
-
-  final List<IconData> icons = [
+  static const List<IconData> icons = [
     Icons.chat_outlined,
     Icons.groups_outlined,
     Icons.person_pin,
     Icons.list,
   ];
 
+  static const List<String> labels = ["Chats", "Groups", "Profile", "More"];
+
   @override
   Widget build(BuildContext context) {
-    const labels = ["Chats", "Groups", "Profile", "More"];
-
     return Container(
       height: 100.h,
       width: double.infinity,
@@ -39,12 +39,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: List.generate(icons.length, (index) {
-          final isSelected = _currentIndex == index;
+          final isSelected = currentIndex == index;
 
           return GestureDetector(
-            onTap: () {
-              setState(() => _currentIndex = index);
-            },
+            onTap: () => onTap(index),
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 250),
               width: isSelected ? 76.w : 50.w,

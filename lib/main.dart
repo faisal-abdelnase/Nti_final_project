@@ -28,7 +28,7 @@ class ChatApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       onGenerateRoute: AppRouter.generateRoute,
-      initialRoute: Routes.profile,
+      initialRoute: Routes.mainLayout,
     );
   }
 }
