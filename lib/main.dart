@@ -3,15 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:nti_final_project/core/routing/app_router.dart';
 import 'package:nti_final_project/core/routing/routes.dart';
 import 'package:nti_final_project/firebase_options.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-);
-  runApp(const ChatApp());
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(
+    ScreenUtilInit(
+      designSize: const Size(393, 852),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => const ChatApp(),
+    ),
+  );
 }
 
 class ChatApp extends StatelessWidget {
@@ -23,7 +28,7 @@ class ChatApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       onGenerateRoute: AppRouter.generateRoute,
-      initialRoute: Routes.chatsConversation,
+      initialRoute: Routes.profile,
     );
   }
 }
