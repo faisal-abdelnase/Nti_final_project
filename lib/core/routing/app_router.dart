@@ -9,7 +9,7 @@ class AppRouter {
     switch (routeSettings.name) {
       case Routes.chatsConversation:
         return MaterialPageRoute(builder: (_) => ChatsConversationScreen());
-      case "/":
+      case Routes.loginScreen:
           return MaterialPageRoute(builder: (_) => LoginScreen());
       case Routes.signUpScreen:
           return  MaterialPageRoute(builder: (_) => SignUpScreen()); 
