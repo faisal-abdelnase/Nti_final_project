@@ -9,77 +9,84 @@ class CardMessageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => ChatsConversationScreen()),
-        );
-      },
-      child: Container(
-        margin: EdgeInsets.only(bottom: 24.h),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            CircleAvatar(
-              radius: 18,
-              backgroundImage: AssetImage("assets/images/Avatar.png"),
-            ),
-            SizedBox(width: 16.w),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "David Wayne",
-                    style: StyleManagers.font16Black700,
-                  ),
-                ),
-                Text(
-                  "Thanks a bunch! Have a great day! 😊",
-                  style: StyleManagers.font12grey700,
-                ),
-              ],
-            ),
-            Spacer(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  "12:00",
-                  style: StyleManagers.font12grey700.copyWith(
-                    color: ColorManagers.chatsTimeColor,
-                  ),
-                ),
-                SizedBox(height: 10.h),
-                Container(
-                  constraints: BoxConstraints(minWidth: 16),
-                  decoration: BoxDecoration(
-                    color: ColorManagers.notificationColor,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      left: 5.w,
-                      right: 5.w,
-                      top: 2.h,
-                      bottom: 4.h,
-                    ),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(8), // For ripple clipping
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ChatsConversationScreen()),
+          );
+        },
+        child: Container(
+          margin: EdgeInsets.only(bottom: 24.h),
+          padding: EdgeInsets.symmetric(
+            vertical: 8,
+          ), // optional, to make ripple visible
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              CircleAvatar(
+                radius: 18,
+                backgroundImage: AssetImage("assets/images/Avatar.png"),
+              ),
+              SizedBox(width: 16.w),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
                     child: Text(
-                      "5",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                      ),
-                      textAlign: TextAlign.center,
+                      "David Wayne",
+                      style: StyleManagers.font16Black700,
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                  Text(
+                    "Thanks a bunch! Have a great day! 😊",
+                    style: StyleManagers.font12grey700,
+                  ),
+                ],
+              ),
+              Spacer(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    "12:00",
+                    style: StyleManagers.font12grey700.copyWith(
+                      color: ColorManagers.chatsTimeColor,
+                    ),
+                  ),
+                  SizedBox(height: 10.h),
+                  Container(
+                    constraints: BoxConstraints(minWidth: 16),
+                    decoration: BoxDecoration(
+                      color: ColorManagers.notificationColor,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        left: 5.w,
+                        right: 5.w,
+                        top: 2.h,
+                        bottom: 4.h,
+                      ),
+                      child: Text(
+                        "5",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
