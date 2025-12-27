@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nti_final_project/core/widgets/top_appbar/background.dart';
 import 'package:nti_final_project/core/widgets/top_appbar/default_content.dart';
 import 'package:nti_final_project/core/widgets/top_appbar/search_content.dart';
+import 'package:flutter/services.dart';
 
 class CustomTopAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomTopAppBar({super.key});
@@ -37,31 +38,38 @@ class _CustomTopAppBarState extends State<CustomTopAppBar> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 70.h,
-      width: double.infinity,
-      child: Stack(
-        children: [
-          const TopAppBarBackground(),
-          SafeArea(
-            bottom: false,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.w),
-              child: SizedBox(
-                height: 75.h,
-                child: AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 200),
-                  child: _isSearching
-                      ? TopAppBarSearchContent(
-                          controller: _searchController,
-                          onClosePressed: _closeSearch,
-                        )
-                      : TopAppBarDefaultContent(onSearchPressed: _openSearch),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+      ),
+      child: SizedBox(
+        height: 100.h,
+        width: double.infinity,
+        child: Stack(
+          children: [
+            const TopAppBarBackground(),
+            SafeArea(
+              bottom: false,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: SizedBox(
+                  height: 75.h,
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 200),
+                    child: _isSearching
+                        ? TopAppBarSearchContent(
+                            controller: _searchController,
+                            onClosePressed: _closeSearch,
+                          )
+                        : TopAppBarDefaultContent(onSearchPressed: _openSearch),
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

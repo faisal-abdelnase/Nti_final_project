@@ -14,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
       body: SizedBox(
         width: double.infinity,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+          padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 10.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -49,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 32.h),
+              SizedBox(height: 10.h),
               Text(
                 'John Lennon',
                 style: TextStyle(
@@ -59,7 +59,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 32.h),
+              SizedBox(height: 20.h),
               UserDataRow(title: "Phone", data: "(+44) 20 1234 5689"),
               SizedBox(height: 16.h),
               UserDataRow(title: "Gender", data: "Male"),
