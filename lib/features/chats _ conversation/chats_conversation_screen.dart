@@ -18,28 +18,24 @@ class ChatsConversationScreen extends StatelessWidget {
           Expanded(
             child: Container(
               width: double.infinity,
-            
-              decoration: BoxDecoration(
-                color: Color(0xffF0F0F3),
-              ),
-            
+
+              decoration: BoxDecoration(color: Color(0xffF0F0F3)),
+
               child: ListView.builder(
+                physics: BouncingScrollPhysics(),
                 itemCount: messages.length,
-                itemBuilder: (context, index){
+                itemBuilder: (context, index) {
                   return messages[index].id == "me"
-                  ? ChatBuble(message: messages[index].message,)
-                  :ChatBubleFriend(message: messages[index].message);
-                }),
+                      ? ChatBuble(message: messages[index].message)
+                      : ChatBubleFriend(message: messages[index].message);
+                },
+              ),
             ),
           ),
 
-
-          SendMessageContainer()
+          SendMessageContainer(),
         ],
       ),
     );
   }
 }
-
-
-
