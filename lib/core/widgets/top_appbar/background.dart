@@ -11,7 +11,7 @@ class TopAppBarBackground extends StatelessWidget {
       children: [
         // Base background
         Container(
-          height: 110.h,
+          height: 100.h,
           width: double.infinity,
           color: ColorManagers.topBarMainColor,
         ),
@@ -20,7 +20,7 @@ class TopAppBarBackground extends StatelessWidget {
           left: 0,
           right: 0,
           child: Container(
-            height: 80.h,
+            height: 100.h,
             decoration: BoxDecoration(
               gradient: const LinearGradient(
                 begin: Alignment.centerRight,
