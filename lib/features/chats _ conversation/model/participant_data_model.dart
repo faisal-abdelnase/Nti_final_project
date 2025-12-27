@@ -7,10 +7,10 @@ class ParticipantData {
     this.photoURL,
   });
 
-  factory ParticipantData.fromJson(Map<String, dynamic> json) {
+  factory ParticipantData.fromJson(Map<String, dynamic> map) {
     return ParticipantData(
-      name: json['name'] ?? '',
-      photoURL: json['photoURL'],
+      name: map['name'] ?? '',
+      photoURL: map['photoURL'],
     );
   }
 
