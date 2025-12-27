@@ -20,21 +20,34 @@ class CustomTextFeild extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: TextFormField(
+        validator: (text) {
+          if (text == null || text.trim().isEmpty) {
+            return 'please enter valid input';
+          }
+          return null;
+        },
         style: StyleManagers.font16BlackBlue700.copyWith(fontSize: 23),
         controller: textEditingController,
         decoration: InputDecoration(
-          prefixIcon: Icon(iconData, size: 25, color: ColorManagers.blackColor,),
+          prefixIcon: Icon(iconData, size: 25, color: ColorManagers.blackColor),
           suffixIcon: Icon(icon),
           hintText: text,
           hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 24),
-          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(
-            color: ColorManagers.secondryColor, width: 2.7)),
-          border: UnderlineInputBorder(borderSide: BorderSide(
-            color: ColorManagers.blackColor, width: 2.5)),
-          enabledBorder: UnderlineInputBorder(borderSide: BorderSide(
-            color: ColorManagers.blackColor, width: 2.5)),
-          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(
-            color: ColorManagers.blackColor, width: 2.5)),    
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: ColorManagers.secondryColor,
+              width: 2.7,
+            ),
+          ),
+          border: UnderlineInputBorder(
+            borderSide: BorderSide(color: ColorManagers.blackColor, width: 2.5),
+          ),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: ColorManagers.blackColor, width: 2.5),
+          ),
+          disabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: ColorManagers.blackColor, width: 2.5),
+          ),
         ),
       ),
     );

@@ -35,7 +35,7 @@ class FirebaseDb {
 
   // login
   Future<UserModel> login(String email, String password) async {
-    UserCredential userCredential = await auth.createUserWithEmailAndPassword(
+    UserCredential userCredential = await auth.signInWithEmailAndPassword(
       email: email,
       password: password,
     );

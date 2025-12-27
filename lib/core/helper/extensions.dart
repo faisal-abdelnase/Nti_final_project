@@ -27,7 +27,6 @@ extension Navigation on BuildContext {
 
 
 
-
 extension ContextExtensions on BuildContext {
   Size get screenSize => MediaQuery.sizeOf(this);
 
