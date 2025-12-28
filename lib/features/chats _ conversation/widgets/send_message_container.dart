@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nti_final_project/core/helper/extensions.dart';
+import 'package:nti_final_project/core/service/firebase_chat_service.dart';
 import 'package:nti_final_project/core/theme/color_managers.dart';
 import 'package:nti_final_project/core/theme/style_managers.dart';
 import 'package:nti_final_project/features/chats%20_%20conversation/widgets/attachment_ptions.dart';
 
 class SendMessageContainer extends StatefulWidget {
   const SendMessageContainer({
-    super.key,
+    super.key, required this.chatId,
   });
+
+  final String chatId;
 
   @override
   State<SendMessageContainer> createState() => _SendMessageContainerState();
@@ -45,6 +48,7 @@ class _SendMessageContainerState extends State<SendMessageContainer> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4.0),
               child: TextField(
+                controller: controller,
                 decoration: InputDecoration(
     
                   hintText: "Type a message...",
@@ -116,7 +120,16 @@ class _SendMessageContainerState extends State<SendMessageContainer> {
               minimumSize: Size(45, 45),
               shape: CircleBorder()
             ),
-            onPressed: (){}, 
+            onPressed: (){
+              if(!isTextEmpty){
+                FirebaseChatService().sendMessage(
+                  chatId: widget.chatId, 
+                  text: controller.text,
+                );
+
+                controller.clear();
+              }
+            }, 
             icon: isTextEmpty 
             ? FaIcon(FontAwesomeIcons.microphoneLines, color: Colors.white,)
             : Icon(Icons.send_sharp, color: Colors.white,)

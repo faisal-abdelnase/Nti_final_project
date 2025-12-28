@@ -1,5 +1,8 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nti_final_project/core/service/firebase_chat_service.dart';
 import 'package:nti_final_project/core/theme/style_managers.dart';
 
 void addOptionsPopup(BuildContext context) {
@@ -55,13 +58,18 @@ void addOptionsPopup(BuildContext context) {
               SizedBox(
                 width: 297.w,
                 height: 56.h,
-                child: Row(
-                  children: [
-                    SizedBox(width: 32.w),
-                    Icon(Icons.person_outline_rounded),
-                    SizedBox(width: 16.w),
-                    Text('Add Friend', style: StyleManagers.font16Black500),
-                  ],
+                child: GestureDetector(
+                  onTap: () {
+                    FirebaseChatService().createOrGetDirectChat("vW0kLKMX3hb33MwUOO5ku5AkoM42");
+                  },
+                  child: Row(
+                    children: [
+                      SizedBox(width: 32.w),
+                      Icon(Icons.person_outline_rounded),
+                      SizedBox(width: 16.w),
+                      Text('Add Friend', style: StyleManagers.font16Black500),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(

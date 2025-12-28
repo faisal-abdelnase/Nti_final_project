@@ -3,9 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nti_final_project/core/theme/color_managers.dart';
 import 'package:nti_final_project/core/theme/style_managers.dart';
 import 'package:nti_final_project/features/chats%20_%20conversation/chats_conversation_screen.dart';
+import 'package:nti_final_project/features/chats/model/user_chat_item.dart';
 
 class CardMessageContainer extends StatelessWidget {
-  const CardMessageContainer({super.key});
+  const CardMessageContainer({super.key, required this.userChat, });
+
+  final UserChatItem userChat;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +19,10 @@ class CardMessageContainer extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ChatsConversationScreen()),
+            MaterialPageRoute(builder: (context) => ChatsConversationScreen(chatId: userChat.chatId,),  ),
           );
+
+
         },
         child: Container(
           margin: EdgeInsets.only(bottom: 24.h),
@@ -38,12 +43,12 @@ class CardMessageContainer extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      "David Wayne",
+                      userChat.otherUserName ?? "",
                       style: StyleManagers.font16Black700,
                     ),
                   ),
                   Text(
-                    "Thanks a bunch! Have a great day! 😊",
+                    userChat.lastMessage,
                     style: StyleManagers.font12grey700,
                   ),
                 ],

@@ -11,7 +11,7 @@ class AppRouter {
   static Route? generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case Routes.chatsConversation:
-        return MaterialPageRoute(builder: (_) => ChatsConversationScreen());
+        return MaterialPageRoute(builder: (_) => ChatsConversationScreen(chatId: routeSettings.arguments as String,));
       case Routes.loginScreen:
         return MaterialPageRoute(builder: (_) => LoginScreen());
       case Routes.signUpScreen:

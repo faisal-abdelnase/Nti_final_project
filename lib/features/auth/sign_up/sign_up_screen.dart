@@ -45,41 +45,41 @@ class _SignUpScreenState extends State<SignUpScreen> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
-      child: BlocConsumer<AuthCubit, AuthState>(
-        listener: (context, state) {
-          if (state is AuthSuccsess) {
+      child: Scaffold(
+        resizeToAvoidBottomInset: true,
+        body: BlocConsumer<AuthCubit, AuthState>(
+          listener: (context, state) {
+            if (state is AuthSuccsess) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  backgroundColor: Colors.green,
+                  content: Text('Register Successfully..',
+                  style: TextStyle(color: Colors.white),)
+                )
+              );
+              context.pushNamed(Routes.mainLayout);
+            }
+            if (state is AuthError) {
               ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: Colors.green,
-                content: Text('Register Successfully..',
-                style: TextStyle(color: Colors.white),)
-              )
-            );
-            context.pushNamed(Routes.chatsConversation);
-          }
-          if (state is AuthError) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: Colors.red,
-                content: Text(state.errMessage,
-                style: TextStyle(color: Colors.white),)
-              )
-            );
-          }
-        },
-        builder: (context, state) {
-          final myCubit = context.read<AuthCubit>();
+                SnackBar(
+                  backgroundColor: Colors.red,
+                  content: Text(state.errMessage,
+                  style: TextStyle(color: Colors.white),)
+                )
+              );
+            }
+          },
+          builder: (context, state) {
+            final myCubit = context.read<AuthCubit>();
 
-          if (state is AuthLoading) {
-            return Center(
-              child: CircularProgressIndicator(
-                color: ColorManagers.primaryColor,
-              ),
-            );
-          }
-          return Scaffold(
-            resizeToAvoidBottomInset: true,
-            body: SingleChildScrollView(
+            if (state is AuthLoading) {
+              return Center(
+                child: CircularProgressIndicator(
+                  color: ColorManagers.primaryColor,
+                ),
+              );
+            }
+            return SingleChildScrollView(
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -222,9 +222,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ],
                 ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
