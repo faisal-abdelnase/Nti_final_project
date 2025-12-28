@@ -56,7 +56,7 @@ class FirebaseChatService {
         return user;
       }
     } on FirebaseAuthException catch (e) {
-      throw _handleAuthException(e);
+      throw handleAuthException(e);
     } catch (e) {
       throw Exception('Sign up failed: $e');
     }
@@ -81,7 +81,7 @@ class FirebaseChatService {
 
       return userCredential.user;
     } on FirebaseAuthException catch (e) {
-      throw _handleAuthException(e);
+      throw handleAuthException(e);
     } catch (e) {
       throw Exception('Sign in failed: $e');
     }
@@ -782,7 +782,7 @@ class FirebaseChatService {
 
   // ============ HELPER METHODS ============
 
-  String _handleAuthException(FirebaseAuthException e) {
+  String handleAuthException(FirebaseAuthException e) {
     switch (e.code) {
       case 'weak-password':
         return 'The password provided is too weak.';

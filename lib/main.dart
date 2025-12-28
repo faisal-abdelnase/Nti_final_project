@@ -5,9 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nti_final_project/core/routing/app_router.dart';
 import 'package:nti_final_project/core/routing/routes.dart';
-import 'package:nti_final_project/cubits/auth_cubit.dart';
-import 'package:nti_final_project/firebase/firebase_db.dart';
+import 'package:nti_final_project/features/auth/cubit/auth_cubit.dart';
 import 'package:nti_final_project/firebase_options.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,13 +29,18 @@ class ChatApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthCubit(FirebaseDb()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthCubit>(
+          create: (context) => AuthCubit(),
+        ),
+
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(scaffoldBackgroundColor: Colors.white),
         onGenerateRoute: AppRouter.generateRoute,
-        initialRoute: Routes.mainLayout,
+        initialRoute: Routes.loginScreen,
       ),
     );
   }

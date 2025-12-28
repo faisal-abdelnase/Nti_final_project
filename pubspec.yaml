@@ -28,25 +28,17 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^9.1.0
+  cloud_firestore: ^6.1.1
+  cupertino_icons: ^1.0.8
+  firebase_auth: ^6.1.3
+  firebase_core: ^4.3.0
   flutter:
     sdk: flutter
-
-  # Common packages
-  cupertino_icons: ^1.0.8
-
-  # Firebase
-  firebase_core: ^4.3.0
-  firebase_auth: ^6.1.3
-  cloud_firestore: ^6.1.1
-
-  # State management
-  bloc: ^9.1.0
   flutter_bloc: ^9.1.1
-
-  # UI & utilities
+  flutter_custom_clippers: ^2.1.0
   flutter_screenutil: ^5.9.3
   font_awesome_flutter: ^10.12.0
-  flutter_custom_clippers: ^2.1.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0
