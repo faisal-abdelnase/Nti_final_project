@@ -13,8 +13,6 @@ class FirebaseChatService {
   // Get current user ID
   String? get currentUserId => _auth.currentUser?.uid;
 
-  // ============ AUTHENTICATION ============
-
   // Sign Up with Email and Password
   Future<User?> signUp({
     required String email,

@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nti_final_project/core/service/firebase_chat_service.dart';
+import 'package:nti_final_project/core/helper/extensions.dart';
+import 'package:nti_final_project/core/routing/routes.dart';
 import 'package:nti_final_project/core/theme/style_managers.dart';
 
 void addOptionsPopup(BuildContext context) {
@@ -60,7 +61,8 @@ void addOptionsPopup(BuildContext context) {
                 height: 56.h,
                 child: GestureDetector(
                   onTap: () {
-                    FirebaseChatService().createOrGetDirectChat("vW0kLKMX3hb33MwUOO5ku5AkoM42");
+                    // FirebaseChatService().createOrGetDirectChat("vW0kLKMX3hb33MwUOO5ku5AkoM42");
+                    context.pushNamed(Routes.addFriendsScreen);
                   },
                   child: Row(
                     children: [

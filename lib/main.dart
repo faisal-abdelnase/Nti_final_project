@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nti_final_project/core/routing/app_router.dart';
 import 'package:nti_final_project/core/routing/routes.dart';
 import 'package:nti_final_project/features/auth/cubit/auth_cubit.dart';
+import 'package:nti_final_project/features/chats/cubit/friends_chats_cubit.dart';
 import 'package:nti_final_project/firebase_options.dart';
 
 
@@ -33,6 +34,10 @@ class ChatApp extends StatelessWidget {
       providers: [
         BlocProvider<AuthCubit>(
           create: (context) => AuthCubit(),
+        ),
+
+        BlocProvider<FriendsChatsCubit>(
+          create: (context) => FriendsChatsCubit(),
         ),
 
       ],
